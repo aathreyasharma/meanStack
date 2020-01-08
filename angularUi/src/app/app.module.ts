@@ -13,7 +13,8 @@ import { AuthService } from './auth.service';
 import { EventService } from './event.service';
 import { AuthGuard } from './auth.guard'
 import { TokenInterceptorService } from './token-interceptor.service';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { TokenInterceptorService } from './token-interceptor.service';
   BrowserModule,
   AppRoutingModule,
   FormsModule,
-  HttpClientModule
+  HttpClientModule,
+  MaterialModule,
+  BrowserAnimationsModule
   ],
   providers: [AuthService, EventService, AuthGuard,
   {
