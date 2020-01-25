@@ -1,4 +1,204 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Bad+Script&display=swap');
+html, body {
+	height: 100vh; 
+	background-color: transparent;
+	background: url("/assets/app-bg-2.jpg") no-repeat center;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+#particle-js {
+	height: 100%;
+	background: #f00;
+}
+.title {
+	font-family: 'Bad Script', cursive;
+
+}
+/*.container {
+	background-image: 
+	}*/
+
+	.card-dark {
+		background: #333333;
+		border-color: #333333
+	}
+
+	.card-dark-footer {
+		background: #6b6b6b;
+		color: #000000;
+	}
+
+	.menu-items {
+		text-align: right;
+		flex: 1 1 auto;
+	}
+	.menu-items a {
+		text-decoration: none;
+		color: #ffffff;
+		font-size: 16px;
+		padding-left: 20px; 
+	}
+
+	.title-center {
+		flex: 1 1 auto;
+		text-align: right;
+	}
+
+	.sidebar {
+		/*background: #b0b0b0;*/
+		background-color: transparent;
+		/*padding: 20px;*/
+		font-size: 20px;
+		letter-spacing: 1px
+	}
+
+	.mat-toolbar {
+		background-color: transparent;
+		/*position: absolute;*/
+		color: #ffffff;
+	}
+
+	.mat-toolbar-row h1 a {
+		color: #000;
+		text-decoration: none;
+		font-family: 'Bad Script', cursive;
+		font-size: 30px;
+		letter-spacing: 0em;
+		padding-left: 50px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+
+	.mat-sidenav .mat-nav-list a {
+		color: #ffffff;
+	}
+	
+	.mat-sidenav-content {
+		/*background: #000000;*/
+		background-color: transparent;
+		color: #ffffff;
+	}
+
+	.mat-sidenav-container {
+		background-color: transparent;
+	}
+
+	.button-border-flow {
+		/*margin: 20px;*/
+		padding: 50px 20px 10px 20px;
+	}
+
+	/*h1 a {
+		font-size: 20px;
+		letter-spacing: 5px;
+		text-transform: uppercase;
+		padding-left: 20px;
+		font-family: cursive;
+		}*/
+
+		.button-border-flow a{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: #1670f0;
+			padding: 5px 5px 0px 5px;
+			margin-top: 20px;
+			/*font-size: 30px;*/
+			/*letter-spacing: 2px;*/
+			/*text-transform: uppercase;*/
+			text-decoration: none;
+			box-shadow: 0px 5px 10px 0px rgba(0,0,0,.3);
+			overflow: hidden;
+		}
+
+		.button-border-flow a:before{
+			content: '';
+			position: absolute;
+			top: 2px;
+			left: 2px;
+			bottom: 2px;
+			width: 50%;
+			background: rgba(255,255,255,0.05);
+		}
+
+		.button-border-flow a span:nth-child(1){
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background: linear-gradient(to right, #ededed, #262729);
+			animation: animate1 2s linear infinite;
+		}
+
+		@keyframes animate1{
+			0%{
+				transform: translateX(-100%);
+			}
+			100%{
+				transform: translateX(100%);
+			}
+		}
+
+		.button-border-flow a span:nth-child(2){
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 2px;
+			height: 100% ;
+			background: linear-gradient(to bottom, #ededed, #262729);
+			animation: animate2 2s linear infinite;
+			animation-delay: 1s;
+		}
+
+		@keyframes animate2{
+			0%{
+				transform: translateY(-100%);
+			}
+			100%{
+				transform: translateY(100%);
+			}
+		}
+
+		.button-border-flow a span:nth-child(3){
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 2px;
+			background: linear-gradient(to left, #ededed, #262729);
+			animation: animate3 2s linear infinite;
+		}
+
+		@keyframes animate3{
+			0%{
+				transform: translateX(100%);
+			}
+			100%{
+				transform: translateX(-100%);
+			}
+		}
+
+		.button-border-flow a span:nth-child(4){
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 2px;
+			height: 100% ;
+			background: linear-gradient(to top, #ededed, #262729);
+			animation: animate4 2s linear infinite;
+			animation-delay: 1s;
+		}
+
+		@keyframes animate4{
+			0%{
+				transform: translateY(100%);
+			}
+			100%{
+				transform: translateY(-100%);
+			}
+		}
+
+		body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
