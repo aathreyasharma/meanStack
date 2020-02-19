@@ -18,7 +18,14 @@
             <label for="">Password</label>
             <input [(ngModel)]="registerUserData.password" name="password" type="password" class="form-control rounded-0" required>
           </div>
-          <button (click)="registerUser()" class="btn btn-primary float-right">Register</button>
+          <div class="form-group">
+            <label id="userType">You are a ..</label>
+            <mat-radio-group class="form-control" name="userType" [(ngModel)]="registerUserData.userType">
+               <mat-radio-button class="form-control" color="primary" *ngFor="let type of userTypes" [value]="type">{{type | titlecase }}</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <button mat-raised-button (click)="registerUser()" color = "primary" class="float-right">Register</button>
+
         </form>
       </div>
     </div>

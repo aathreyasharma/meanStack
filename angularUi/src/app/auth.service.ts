@@ -31,4 +31,6 @@ export class AuthService {
 		localStorage.removeItem('auth_token')
 		this._router.navigate(['/events'])
 	}
+
+	
 }

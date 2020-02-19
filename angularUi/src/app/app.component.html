@@ -1,18 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a href="#" class="navbar-brand">Paadayyy!!</a>
+  <!-- <a href="#" class="navbar-brand">Global Events</a> -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggle-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a href="" class="nav-link" routerLink="/events" routerLinkActive="active">Events</a>
+        <a href="" class="nav-link" routerLink="/" routerLinkActive="active">Open E-Comm</a>
       </li>
-      <li class="nav-item">
-        <a href="" class="nav-link" routerLink="/special" routerLinkActive="active">Members</a>
-      </li>
+      <!-- <li class="nav-item">
+        <a href="" class="nav-link" *ngIf="_authService.loggedIn()" routerLink="/special" routerLinkActive="active">Members</a>
+      </li> -->
     </ul>
     <ul class="navbar-nav">
+      <a class="nav-link" routerLink="/cart">Cart: {{totalUnits}}</a>
       <a class="nav-link" *ngIf="!_authService.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
       <a class="nav-link" *ngIf="!_authService.loggedIn()" routerLink="/register" routerLinkActive="active">Register</a>
       <a class="nav-link" style="cursor:pointer" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">Logout</a>

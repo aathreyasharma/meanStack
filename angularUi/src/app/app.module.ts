@@ -15,29 +15,41 @@ import { AuthGuard } from './auth.guard'
 import { TokenInterceptorService } from './token-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { ConstantsService } from './common/services/constants.service';
+import { EventDetailsComponent } from './event-details/event-details.component';
+import { CartService } from './cart.service';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
-  AppComponent,
-  RegisterComponent,
-  LoginComponent,
-  SpecialEventsComponent,
-  EventsComponent
+    AppComponent,
+    RegisterComponent,
+    LoginComponent,
+    SpecialEventsComponent,
+    EventsComponent,
+    EventDetailsComponent,
+    CartComponent
   ],
   imports: [
-  BrowserModule,
-  AppRoutingModule,
-  FormsModule,
-  HttpClientModule,
-  MaterialModule,
-  BrowserAnimationsModule
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    MaterialModule,
+    BrowserAnimationsModule
   ],
-  providers: [AuthService, EventService, AuthGuard,
-  {
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptorService,
-    multi: true
-  }],
+  providers: [
+    AuthService, 
+    EventService, 
+    AuthGuard, 
+    ConstantsService,
+    CartService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

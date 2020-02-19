@@ -4,23 +4,25 @@ import { EventsComponent } from './events/events.component';
 import { SpecialEventsComponent} from './special-events/special-events.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
+import { CartComponent } from './cart/cart.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
 {
   path: '',
-  redirectTo: '/events',
+  redirectTo: '/items',
   pathMatch: 'full'
 },
 {
-  path: 'events',
+  path: 'items',
   component: EventsComponent
 },
-{
-  path: 'special',
-  component: SpecialEventsComponent,
-  canActivate: [AuthGuard]
-},
+// {
+//   path: 'special',
+//   component: SpecialEventsComponent,
+//   canActivate: [AuthGuard]
+// },
 {
   path: 'login',
   component: LoginComponent
@@ -28,6 +30,15 @@ const routes: Routes = [
 {
   path: 'register',
   component: RegisterComponent
+},
+{
+  path: 'eventDetails',
+  component: EventDetailsComponent
+},
+{
+  path: 'cart',
+  component: CartComponent,
+  canActivate: [AuthGuard]
 }
 ];
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router'
+import { MaterialModule } from '../material/material.module';
 
 @Component({
   selector: 'app-register',
@@ -10,13 +11,13 @@ import { Router } from '@angular/router'
 export class RegisterComponent implements OnInit {
 
   registerUserData = {}
+  userTypes: string[] = ['buyer', 'seller'];
   constructor(private _auth: AuthService, private _router: Router) { }
   ngOnInit() {
   }
 
   registerUser() {
     console.log(this.registerUserData);
-    // console.log('asdf');
     this._auth.registerUser(this.registerUserData)
     .subscribe(
       res => { 

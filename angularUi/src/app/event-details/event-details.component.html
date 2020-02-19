@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="imgBx">
+				<img [src]="eventObj.imageUrl" [alt]="eventObj.name">
+			</div>
+		</div>
+		<div class="col-md-1"></div>
+		<div class="col-md-8">
+			<div class="contentBox">
+				<h2>{{eventObj.name}}</h2>
+				<br>
+				<p>{{eventObj.description}}</p>
+
+				<label for="price"><b>Price: </b> {{eventObj.price}}</label>
+				<br>
+
+				<!-- <button class="mat-stroked-button" color="primary" (click)="deleteeventObj(eventObjObj._id)"><a>Delete</a></button> -->
+				<label for="qty"><b>Units: </b></label>
+				<input class="qty" type="number" min="1" max="10" value="1" [(ngModel)]="eventObj.qty" #qty>
+				<button mat-raised-button (click)="addToCart(eventObj)"><span>Add</span></button>
+				<button mat-raised-button (click)="removeFromCart(eventObj)" style="float: right"><span>Remove From Cart</span></button>
+			</div>
+		</div>
+	</div>
+</div>

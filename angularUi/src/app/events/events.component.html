@@ -1,17 +1,32 @@
-<div class="row mt-5">
+<!-- <div class="row mt-5">
 	<div class="col-md-4 mb-3" *ngFor="let event of events">
 		<div class="card text-center">
 			<div class="card-body">
 				<h5 class="card-title">{{event.name}}</h5>
 				<p class="card-title">{{event.description}}</p>
-				<!-- <a href="#" class="btn btn-primary">Buy Ticket</a> -->
-				<button mat-stroked-button color="primary">Buy Ticket</button>
-				<!-- <button mat-stroked-button color="primary">Primary</button> -->
-				<!-- <button mat-raised-button color="primary">qwer</button> -->
+				<button mat-stroked-button color="primary" (click)="eventDetails(event._id)" >More</button>
 			</div>
 			<div class="card-footer text-muted">
-				{{event.date | date:'shortDate'}}
+				{{event.createTs | date:'shortDate'}}
 			</div>
 		</div>
 	</div>
 </div>
+ -->
+
+<div class="neomorph">
+	<div class="row">
+		<div class="card" *ngFor="let event of events">
+			<div class="imgBx">
+				<img [src]="event.imageUrl" alt="image">
+			</div>
+			<div class="contentBox">
+				<h2>{{event.name}}</h2>
+				<p>{{event.description}}</p>
+				<button (click)="eventDetails(event._id)">
+					More
+				</button>
+			</div>
+		</div>
+	</div>
+</div>	

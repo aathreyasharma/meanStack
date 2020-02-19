@@ -1,0 +1,16 @@
+
+
+card-body {
+	outline: none;
+}
+
+.row {
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+/*.card:hover .imgBx,
+.card:hover .contentBox {
+	transform: scale(0.98);
+}*/

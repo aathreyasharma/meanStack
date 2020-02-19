@@ -70,7 +70,8 @@ exports.login = async function(req, res) {
 	uObj = {
 		name: user.name,
 		email: user.email,
-		auth_token: token
+		auth_token: token,
+		uId: user._id
 	}
 	res.status(200).send(uObj);
 }

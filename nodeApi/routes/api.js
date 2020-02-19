@@ -24,6 +24,7 @@ mongoose.connect(
 
 const auth_controller = require('../controllers/authentication_controller');
 const event_controller = require('../controllers/events_controller');
+const verify = auth_controller.verifyToken;
 
 router.get('/', (req, res) => {
 	res.send("From API route")
@@ -33,8 +34,12 @@ router.post('/register', auth_controller.register);
 
 router.post('/login', auth_controller.login);
 
-router.get('/events', event_controller.events);
+router.get('/special', verify, event_controller.specialEvents);
 
-router.get('/special', auth_controller.verifyToken, event_controller.specialEvents);
+router.post('/event', event_controller.createEvent);
+router.get('/events', event_controller.getEvents);
+router.get('/event/:id', event_controller.getEvent);
+router.put('/event', event_controller.editEvent);
+router.delete('/event/:eventId', event_controller.deleteEvent);
 
 module.exports = router

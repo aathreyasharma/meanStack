@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../event.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'app-events',
@@ -9,14 +10,20 @@ import { EventService } from '../event.service';
 export class EventsComponent implements OnInit {
 
 	events = [];
-	constructor(private _eventService: EventService) { }
+	constructor(private _eventService: EventService, private router: Router) { }
 
 	ngOnInit() {
 		this._eventService.getEvents()
 		.subscribe(
-			res => this.events = res,
-			err => console.log(err)
-			)
+		res => this.events = res,
+		err => console.log(err)
+		)
+	}
+
+	eventDetails(eventId) {
+		this._eventService.removeEventId();
+		this._eventService.setEventId(eventId);
+		this.router.navigate(['/eventDetails']);
 	}
 
 }
